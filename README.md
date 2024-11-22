@@ -133,12 +133,3 @@ Install them with:
 ```bash
 pip install -r requirements.txt
 ```
-
----
-
-## **License**
-This project is licensed under the MIT License.
-
----
-
-Let me know if you'd like any additional changes or features!
