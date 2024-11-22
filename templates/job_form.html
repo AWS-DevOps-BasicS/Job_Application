@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+</head>
+<body>
+    <h1>Job Application Form</h1>
+    <form action="/submit" method="post">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="position">Position Applying For:</label><br>
+        <input type="text" id="position" name="position" required><br><br>
+
+        <label for="experience">Total Years of Experience:</label><br>
+        <input type="number" id="experience" name="experience" required><br><br>
+
+        <label for="skills">Skills (comma separated):</label><br>
+        <input type="text" id="skills" name="skills" required><br><br>
+
+        <label for="education">Highest Qualification:</label><br>
+        <input type="text" id="education" name="education" required><br><br>
+
+        <input type="submit" value="Submit Application">
+    </form>
+</body>
+</html>
