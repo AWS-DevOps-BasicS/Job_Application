@@ -4,10 +4,10 @@ import pymysql
 app = Flask(__name__)
 
 # RDS database configuration
-DB_HOST = 'your-rds-endpoint'
-DB_USER = 'your-username'
-DB_PASSWORD = 'your-password'
-DB_NAME = 'your-database'
+DB_HOST = 'jobapplication.c3wsqegimvwi.ap-northeast-3.rds.amazonaws.com'
+DB_USER = 'admin'
+DB_PASSWORD = 'naresh123456'
+DB_NAME = 'jobapplication'
 
 def connect_to_rds():
     """Establish a connection to the RDS database."""
@@ -17,6 +17,48 @@ def connect_to_rds():
         password=DB_PASSWORD,
         database=DB_NAME
     )
+
+def create_database_if_not_exists():
+    """Create the database if it doesn't exist."""
+    connection = pymysql.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD
+    )
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
+            connection.commit()
+    finally:
+        connection.close()
+
+def create_table_if_not_exists():
+    """Create the table if it doesn't exist."""
+    connection = connect_to_rds()
+    try:
+        with connection.cursor() as cursor:
+            create_table_query = """
+            CREATE TABLE IF NOT EXISTS applicants (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(100),
+                email VARCHAR(100),
+                phone VARCHAR(15),
+                position VARCHAR(100),
+                experience TEXT,
+                skills TEXT,
+                education TEXT
+            )
+            """
+            cursor.execute(create_table_query)
+            connection.commit()
+    finally:
+        connection.close()
+
+@app.before_first_request
+def setup():
+    """Ensure database and table exist before processing any requests."""
+    create_database_if_not_exists()
+    create_table_if_not_exists()
 
 @app.route('/')
 def index():

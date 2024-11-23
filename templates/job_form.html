@@ -4,32 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application Form</title>
+    <style>
+        /* General body and page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Centering the form container */
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 2.5em;
+        }
+
+        /* Styling form elements */
+        label {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+            background-color: #f9f9f9;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Additional styling for focus */
+        input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="number"]:focus {
+            border-color: #4CAF50;
+            background-color: #fff;
+        }
+
+        /* Add some spacing */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        /* Adding a footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    <h1>Job Application Form</h1>
-    <form action="/submit" method="post">
-        <label for="name">Full Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+    <div class="container">
+        <h1>Job Application Form</h1>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+            </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <div class="form-group">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+            </div>
 
-        <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="phone" required><br><br>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br>
+            </div>
 
-        <label for="position">Position Applying For:</label><br>
-        <input type="text" id="position" name="position" required><br><br>
+            <div class="form-group">
+                <label for="position">Position Applying For:</label><br>
+                <input type="text" id="position" name="position" required><br>
+            </div>
 
-        <label for="experience">Total Years of Experience:</label><br>
-        <input type="number" id="experience" name="experience" required><br><br>
+            <div class="form-group">
+                <label for="experience">Total Years of Experience:</label><br>
+                <input type="number" id="experience" name="experience" required><br>
+            </div>
 
-        <label for="skills">Skills (comma separated):</label><br>
-        <input type="text" id="skills" name="skills" required><br><br>
+            <div class="form-group">
+                <label for="skills">Skills (comma separated):</label><br>
+                <input type="text" id="skills" name="skills" required><br>
+            </div>
 
-        <label for="education">Highest Qualification:</label><br>
-        <input type="text" id="education" name="education" required><br><br>
+            <div class="form-group">
+                <label for="education">Highest Qualification:</label><br>
+                <input type="text" id="education" name="education" required><br>
+            </div>
 
-        <input type="submit" value="Submit Application">
-    </form>
+            <input type="submit" value="Submit Application">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Job Application Inc. All rights reserved.</p>
+    </footer>
 </body>
 </html>

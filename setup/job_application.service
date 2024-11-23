@@ -3,11 +3,12 @@ Description=Job Application Flask App
 After=network.target
 
 [Service]
-User=your_username
-Group=your_group
-WorkingDirectory=/path/to/job_application
-ExecStart=/usr/bin/python3 /path/to/job_application/app.py
+User=ec2-user
+Group=ec2-user
+WorkingDirectory=/home/ec2-user/Job_Application
+ExecStart=/usr/bin/python3 /home/ec2-user/Job_Application/app.py
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
+
