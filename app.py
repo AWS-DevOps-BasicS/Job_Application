@@ -91,7 +91,8 @@ def submit():
         
         message = "Application submitted successfully!"
     except Exception as e:
-        message = f"Error: {e}"
+        # Replace f-string with string concatenation for compatibility
+        message = "Error: " + str(e)
     finally:
         cursor.close()
         connection.close()
