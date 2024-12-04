@@ -4,9 +4,9 @@ import pymysql
 app = Flask(__name__)
 
 # RDS database configuration
-DB_HOST = 'jobapplication.c3wsqegimvwi.ap-northeast-3.rds.amazonaws.com'
+DB_HOST = 'ja-mysql-db.ctog2ocaiv2m.us-east-1.rds.amazonaws.com'
 DB_USER = 'admin'
-DB_PASSWORD = 'naresh123456'
+DB_PASSWORD = 'admin123'
 DB_NAME = 'jobapplication'
 
 def connect_to_rds():
