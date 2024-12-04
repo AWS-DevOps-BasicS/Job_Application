@@ -6,7 +6,7 @@ After=network.target
 User=ec2-user
 Group=ec2-user
 WorkingDirectory=/home/ec2-user/Job_Application
-ExecStart=/usr/bin/python3 /home/ec2-user/Job_Application/app.py
+ExecStart=/usr/bin/python /home/ec2-user/Job_Application/app.py
 Restart=always
 
 [Install]
