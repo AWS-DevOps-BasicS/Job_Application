@@ -27,7 +27,8 @@ def create_database_if_not_exists():
     )
     try:
         with connection.cursor() as cursor:
-            cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_NAME}")
+            # Use old-style string formatting for compatibility
+            cursor.execute("CREATE DATABASE IF NOT EXISTS %s" % DB_NAME)
             connection.commit()
     finally:
         connection.close()
